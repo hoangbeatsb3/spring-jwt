@@ -22,4 +22,8 @@ public class TeacherScheduleService {
     public TeacherSchedule createStudentSchedule(TeacherSchedule teacherSchedule) {
         return repository.save(teacherSchedule);
     }
+
+    public List<TeacherSchedule> getTeacherScheduleByTeacherId(Integer teacherId) {
+        return repository.findByIdTeacherIdId(teacherId);
+    }
 }

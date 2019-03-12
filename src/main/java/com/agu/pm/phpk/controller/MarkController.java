@@ -24,30 +24,21 @@ public class MarkController {
         return service.getByStudentId(studentId);
     }
 
-//    @PostMapping("")
-//    public Mark createMark(@RequestBody Mark mark) {
-//        return service.createMark(mark);
-//    }
+    @PostMapping("")
+    public Mark createMark(@RequestBody Mark mark) {
+        return service.createMark(mark);
+    }
 
-//    @PutMapping("")
-//    public void updateMark(@RequestBody Mark mark) {
-//        service.updateMark(mark);
-//    }
-//
-//    @DeleteMapping("")
-//    public void deleteMark(@RequestParam("student_id") Integer studentId,
-//                           @RequestParam("subject_id") Integer subjectId) {
-//        service.deleteMark(studentId, subjectId);
-//    }
-//
-//    @GetMapping("/student_id/{student_id}")
-//    public List<Mark> getByStudentId(@PathVariable("student_id") Integer id) {
-//        return service.getByStudentId(id);
-//    }
-//
-//    @GetMapping("/subject_id/{subject_id}")
-//    public List<Mark> getBySubjectId(@PathVariable("subject_id") Integer id) {
-//        return service.getBySubjectId(id);
-//    }
+    @PutMapping("")
+    public void updateMark(@RequestBody Mark mark) {
+        service.updateMark(mark);
+    }
+
+    @DeleteMapping("/student/{student}/course/{course}/term/{term}")
+    public void deleteMark(@PathVariable("student") Integer studentId,
+                           @PathVariable("course") Integer subjectId,
+                           @PathVariable("term") Integer termId) {
+        service.deleteMark(studentId, subjectId, termId);
+    }
 
 }

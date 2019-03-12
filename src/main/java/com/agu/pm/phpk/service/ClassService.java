@@ -17,4 +17,15 @@ public class ClassService {
         return repository.findAll();
     }
 
+    public void update(Class c) {
+        repository.update(c.getName(), c.getId());
+    }
+
+    public void deleteByClassId(Integer classId) {
+        repository.deleteByClassId(classId);
+    }
+
+    public Class createClass(Class c) {
+        return repository.save(c);
+    }
 }

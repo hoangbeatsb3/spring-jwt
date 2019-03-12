@@ -21,7 +21,12 @@ public class StudentScheduleService {
         return repository.findByIdStudentIdId(studentId);
     }
 
+    public Integer getByClassId(Integer classId) {
+        return repository.getByClassId(classId);
+    }
+
     public StudentSchedule createStudentSchedule(StudentSchedule studentSchedule) {
         return repository.save(studentSchedule);
     }
+
 }

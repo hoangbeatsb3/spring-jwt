@@ -12,4 +12,6 @@ public interface TeacherScheduleRepository extends org.springframework.data.repo
 
     TeacherSchedule save(TeacherSchedule teacherSchedule);
 
+
+    List<TeacherSchedule> findByIdTeacherIdId(Integer teacherId);
 }

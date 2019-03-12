@@ -15,19 +15,16 @@ public interface MarkRepository extends org.springframework.data.repository.Repo
 
     List<Mark> findByIdStudentId(Integer studentId);
 
-//    Mark save(Mark mark);
-//
-//    List<Mark> findByStudentId(Integer studentId);
-//
-//    List<Mark> findBySubjectId(Integer subjectId);
-//
-//    @Modifying
-//    @Transactional
-//    @Query("update Mark set mark = ?1 where student_id = ?2 and subject_id = ?3")
-//    void updateMark(Float mark, Integer student_id, Integer subject_id);
-//
-//    @Modifying
-//    @Transactional
-//    @Query("delete from Mark where student_id = ?1 and subject_id = ?2")
-//    void deleteMark(Integer studentId, Integer subjectId);
+    Mark save(Mark mark);
+
+    @Modifying
+    @Transactional
+    @Query("update Mark set mark = ?1 where student_id = ?2 and course_id = ?3 and term_id = ?4")
+    void updateMark(Float mark, Integer studentId, Integer courseId, Integer termId);
+
+    @Modifying
+    @Transactional
+    @Query("delete from Mark where student_id = ?1 and course_id = ?2 and term_id = ?3")
+    void deleteMark(Integer studentId, Integer subjectId, Integer termId);
+
 }

@@ -24,6 +24,10 @@ public class StudentScheduleController {
         return service.getByStudentId(studentId);
     }
 
+    @GetMapping("/class/{id}")
+    public Integer getByClassId(@PathVariable("id") Integer classId) {
+        return service.getByClassId(classId);
+    }
 
     @PostMapping("")
     public StudentSchedule createStudentSchedule(@RequestBody StudentSchedule studentSchedule) {

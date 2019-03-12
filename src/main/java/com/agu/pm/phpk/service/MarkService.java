@@ -21,23 +21,15 @@ public class MarkService {
         return repository.findByIdStudentId(studentId);
     }
 
-//    public Mark createMark(Mark mark) {
-//        return repository.save(mark);
-//    }
-//
-//    public List<Mark> getByStudentId(Integer id) {
-//        return repository.findByStudentId(id);
-//    }
-//
-//    public List<Mark> getBySubjectId(Integer id) {
-//        return repository.findBySubjectId(id);
-//    }
-//
-//    public void updateMark(Mark mark) {
-//        repository.updateMark(mark.getMark(), mark.getId().getStudent().getId(), mark.getId().getCourse().getId());
-//    }
-//
-//    public void deleteMark(Integer studentId, Integer subjectId) {
-//        repository.deleteMark(studentId, subjectId);
-//    }
+    public Mark createMark(Mark mark) {
+        return repository.save(mark);
+    }
+
+    public void updateMark(Mark mark) {
+        repository.updateMark(mark.getMark(), mark.getId().getStudent().getId(), mark.getId().getCourse().getId(), mark.getId().getTerm().getId());
+    }
+
+    public void deleteMark(Integer studentId, Integer subjectId, Integer termId) {
+        repository.deleteMark(studentId, subjectId, termId);
+    }
 }

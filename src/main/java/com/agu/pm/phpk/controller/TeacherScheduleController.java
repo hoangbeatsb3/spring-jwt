@@ -22,6 +22,11 @@ public class TeacherScheduleController {
         return service.getAll();
     }
 
+    @GetMapping("/teacher/{id}")
+    public List<TeacherSchedule> getByTeacherId(@PathVariable("id") Integer teacherId) {
+        return service.getTeacherScheduleByTeacherId(teacherId);
+    }
+
     @PostMapping("")
     public TeacherSchedule createStudentSchedule(@RequestBody TeacherSchedule teacherSchedule) {
         return service.createStudentSchedule(teacherSchedule);

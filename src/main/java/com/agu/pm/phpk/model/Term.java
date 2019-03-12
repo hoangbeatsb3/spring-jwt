@@ -2,11 +2,9 @@ package com.agu.pm.phpk.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Generated;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "term")
@@ -15,6 +13,7 @@ import javax.persistence.Table;
 public class Term {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
