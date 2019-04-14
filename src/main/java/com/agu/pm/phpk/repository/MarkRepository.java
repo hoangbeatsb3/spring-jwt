@@ -27,4 +27,9 @@ public interface MarkRepository extends org.springframework.data.repository.Repo
     @Query("delete from Mark where student_id = ?1 and course_id = ?2 and term_id = ?3")
     void deleteMark(Integer studentId, Integer subjectId, Integer termId);
 
+    @Modifying
+    @Transactional
+    @Query(value = "delete from Mark where student_id = ?1", nativeQuery = true)
+    void deleteMarkByStudentId(Integer studentId);
+
 }

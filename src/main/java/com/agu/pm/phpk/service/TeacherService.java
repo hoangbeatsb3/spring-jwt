@@ -3,6 +3,7 @@ package com.agu.pm.phpk.service;
 import com.agu.pm.phpk.model.Student;
 import com.agu.pm.phpk.model.Teacher;
 import com.agu.pm.phpk.repository.TeacherRepository;
+import com.agu.pm.phpk.repository.TeacherScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class TeacherService {
 
     @Autowired
     private TeacherRepository teacherRepository;
+
+    @Autowired
+    private TeacherScheduleRepository teacherScheduleRepository;
 
     public List<Teacher> getAll() {
         return teacherRepository.findAll();
@@ -27,6 +31,7 @@ public class TeacherService {
     }
 
     public void deleteTeacher(Integer id) {
+        teacherScheduleRepository.deleteTeacherScheduleByTeacherId(id);
         teacherRepository.delete(id);
     }
 
