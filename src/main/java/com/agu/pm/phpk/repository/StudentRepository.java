@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -17,8 +18,8 @@ public interface StudentRepository extends org.springframework.data.repository.R
 
     @Modifying
     @Transactional
-    @Query("update Student set name = ?1, phone = ?2, email = ?3 where id = ?4")
-    void update(String name, String phone, String email, Integer id);
+    @Query("update Student set name = ?1, phone = ?2, email = ?3, birth = ?4, gender = ?5, title = ?6 where id = ?7")
+    void update(String name, String phone, String email, LocalDate birth, String gender, String title, Integer id);
 
     @Modifying
     @Transactional
