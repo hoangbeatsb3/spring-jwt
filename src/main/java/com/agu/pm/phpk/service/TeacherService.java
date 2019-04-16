@@ -27,7 +27,7 @@ public class TeacherService {
     }
 
     public void updateTeacher(Teacher teacher) {
-        teacherRepository.update(teacher.getName(), teacher.getPhone(), teacher.getEmail(), teacher.getId());
+        teacherRepository.update(teacher.getName(), teacher.getPhone(), teacher.getEmail(), teacher.getBirth(), teacher.getGender(), teacher.getSalary(), teacher.getId());
     }
 
     public void deleteTeacher(Integer id) {

@@ -30,7 +30,7 @@ public class StudentService {
     }
 
     public void updateStudent(Student student) {
-        studentRepository.update(student.getName(), student.getPhone(), student.getEmail(), student.getId());
+        studentRepository.update(student.getName(), student.getPhone(), student.getEmail(), student.getBirth(), student.getGender(), student.getTitle(), student.getId());
     }
 
     public void deleteStudent(Integer id) {
